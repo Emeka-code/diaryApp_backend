@@ -11,7 +11,7 @@ app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.status(200).send("Server Up!...");
+  res.status(200).json("Server Up!...");
 });
 
 app.use("/api/diary", userRoute);
