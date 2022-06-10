@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 require("./config/db");
-const PORT = process.env.PORT || 2120;
+const port = process.env.PORT || 2120;
 const app = express();
 const userRoute = require("./router/userRouter");
 const diaryRoute = require("./router/diaryRouter");
@@ -17,6 +17,6 @@ app.get("/", (req, res) => {
 app.use("/api/diary", userRoute);
 app.use("/api/userdiary", diaryRoute);
 
-app.listen(PORT, () => {
-  console.log(`Listening to PORT: ${PORT}`);
+app.listen(port, () => {
+  console.log(`Listening to PORT: ${port}`);
 });
