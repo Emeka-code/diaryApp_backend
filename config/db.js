@@ -1,13 +1,8 @@
 const mongoose = require("mongoose");
-const MONGODB_URI = process.env.ONLINE_URI;
+const Url = process.env.ONLINE_URI;
 
-mongoose.connect(MONGODB_URI);
-mongoose.connection
-  .on("open", () => {
-    console.log("Connected to DataBase");
-  })
-  .once("error", () => {
-    console.log("Failed to connect to DataBase");
-  });
+mongoose.connect(Url).then(() => {
+  console.log("database is now connected...!");
+});
 
 module.exports = mongoose;
